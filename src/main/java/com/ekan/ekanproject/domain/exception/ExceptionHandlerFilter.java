@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
@@ -55,7 +56,7 @@ public class ExceptionHandlerFilter extends ResponseEntityExceptionHandler {
         return new ResponseEntity<Object>(
                 ErrorResponse.<DocumentTypeNotFoundException>builder()
                         .locale(request.getLocale())
-                        .message("Document not found")
+                        .message("Document type not found")
                         .exceptionMessage(ex.getMessage())
                         .exceptionClass(DocumentTypeNotFoundException.class)
                         .code(HttpStatus.NOT_FOUND.value())
@@ -96,4 +97,5 @@ public class ExceptionHandlerFilter extends ResponseEntityExceptionHandler {
                         .exception(ex)
                         .build(), new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
+
 }

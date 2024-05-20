@@ -20,7 +20,7 @@ public class DocumentTypeRemoveByIdUseCaseImpl implements GenericRemoveByIdUseCa
     @Override
     public void execute(final String uuid,
                         final ProductType product,
-                        final Long id){
+                        final Long id) {
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         dataProvider.remove(uuid, product, id);

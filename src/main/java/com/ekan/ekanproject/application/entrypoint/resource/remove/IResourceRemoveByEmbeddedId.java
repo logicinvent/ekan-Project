@@ -13,10 +13,10 @@ public interface IResourceRemoveByEmbeddedId {
     /**
      * This feature provides access to remove information by composite key
      *
-     * @param uuid String
+     * @param uuid    String
      * @param product Product
-     * @param id_1 Long
-     * @param id_2 Long
+     * @param id_1    Long
+     * @param id_2    Long
      * @return TOutputPort
      */
     @Operation(summary = "Service available to remove registered information by composite key")
@@ -27,5 +27,5 @@ public interface IResourceRemoveByEmbeddedId {
                     content = @Content)
     })
     ResponseEntity<Void> execute(final String uuid, final ProductType product, Long id_1, Long id_2);
-    
+
 }

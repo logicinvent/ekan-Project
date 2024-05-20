@@ -23,7 +23,7 @@ public class DocumentRemoveByEmbeddedIdUseCaseImpl implements GenericRemoveByEmb
     public void execute(final String uuid,
                         final ProductType product,
                         final Long beneficiaryId,
-                        final Long documentTypeId){
+                        final Long documentTypeId) {
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         dataProvider.deleteById(uuid, product,

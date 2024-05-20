@@ -29,7 +29,7 @@ public class BeneficiaryGetAllUseCaseImpl implements GenericGetAllUseCase<Transf
     @Override
     public TransferObject<List<BeneficiaryDto>> execute(final String uuid,
                                                         final ProductType product,
-                                                        final Pageable pageable){
+                                                        final Pageable pageable) {
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         var result = dataProvider.findAll(uuid, product, pageable);

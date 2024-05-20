@@ -27,10 +27,15 @@ public class DocumentDataProviderImpl implements GenericDataProvider<Document, D
 
     @Override
     public Page<Document> findAll(final String uuid,
-                                     final ProductType product,
-                                     final Pageable pageable){
+                                  final ProductType product,
+                                  final Pageable pageable) {
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
-        return repository.findAll(pageable);
+        var result = repository.findAll(pageable);
+
+        if (result.isEmpty())
+            throw new DocumentNotFoundException("No results available");
+
+        return result;
 
     }
 
@@ -77,9 +82,9 @@ public class DocumentDataProviderImpl implements GenericDataProvider<Document, D
     }
 
     /**
-     * @param uuid String
+     * @param uuid    String
      * @param product ProductType
-     * @param arg Long
+     * @param arg     Long
      * @return Beneficiary
      */
     @Override
@@ -89,9 +94,9 @@ public class DocumentDataProviderImpl implements GenericDataProvider<Document, D
     }
 
     /**
-     * @param uuid String
+     * @param uuid    String
      * @param product ProductType
-     * @param arg Long
+     * @param arg     Long
      */
     @Override
     public void remove(String uuid, ProductType product, Long arg) {

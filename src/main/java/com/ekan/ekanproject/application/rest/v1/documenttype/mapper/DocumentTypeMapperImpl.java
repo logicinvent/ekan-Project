@@ -14,6 +14,7 @@ public class DocumentTypeMapperImpl extends MapperSupport implements GenericMapp
 
     /**
      * Service available to convert DTOs to models
+     *
      * @param arg List<DocumentTypeDto>
      * @return List<DocumentType>
      */
@@ -26,6 +27,7 @@ public class DocumentTypeMapperImpl extends MapperSupport implements GenericMapp
 
     /**
      * Service available to convert models to DTOs
+     *
      * @param arg List<DocumentType>
      * @return List<DocumentTypeDto>
      */
@@ -41,6 +43,7 @@ public class DocumentTypeMapperImpl extends MapperSupport implements GenericMapp
 
     /**
      * Service available to convert DTO to model
+     *
      * @param arg DocumentTypeDto
      * @return DocumentType
      */
@@ -51,6 +54,7 @@ public class DocumentTypeMapperImpl extends MapperSupport implements GenericMapp
 
     /**
      * Service available to convert model to DTO
+     *
      * @param arg DocumentType
      * @return DocumentTypeDto
      */

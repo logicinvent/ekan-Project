@@ -16,9 +16,9 @@ public interface IResourceGetById<TOutputPort extends OutputPort> {
     /**
      * This feature provides access to the complete information by id
      *
-     * @param uuid String
+     * @param uuid    String
      * @param product Product
-     * @param id Long
+     * @param id      Long
      * @return TOutputPort
      */
     @Operation(summary = "Service available to obtain registered information by id")
@@ -29,5 +29,5 @@ public interface IResourceGetById<TOutputPort extends OutputPort> {
                     content = @Content)
     })
     ResponseEntity<TransferObject<TOutputPort>> execute(final String uuid, final ProductType product, Long id);
-    
+
 }

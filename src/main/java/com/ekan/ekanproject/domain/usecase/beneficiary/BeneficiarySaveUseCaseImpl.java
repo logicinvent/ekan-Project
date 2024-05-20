@@ -25,8 +25,8 @@ public class BeneficiarySaveUseCaseImpl implements GenericSaveUseCase<TransferOb
 
     @Override
     public TransferObject<BeneficiaryDto> execute(final String uuid,
-                                                        final ProductType product,
-                                                        final BeneficiaryDto arg){
+                                                  final ProductType product,
+                                                  final BeneficiaryDto arg) {
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         var result = dataProvider.save(uuid, product, mapper.dtoToModel(arg));

@@ -10,19 +10,19 @@ public interface GenericDataProvider<Res, Req> {
                       Pageable pageable);
 
     Res findById(String uuid,
-             ProductType product,
-             Long arg);
+                 ProductType product,
+                 Long arg);
 
     Res save(String uuid,
-               ProductType product,
+             ProductType product,
              Req arg);
 
     Res update(String uuid,
-             ProductType product,
-             Req arg);
+               ProductType product,
+               Req arg);
 
     void remove(String uuid,
-             ProductType product,
-             Long arg);
+                ProductType product,
+                Long arg);
 
 }

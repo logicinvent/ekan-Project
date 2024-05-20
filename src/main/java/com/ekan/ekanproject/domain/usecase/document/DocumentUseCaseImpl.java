@@ -28,8 +28,8 @@ public class DocumentUseCaseImpl implements GenericGetAllUseCase<TransferObject<
 
     @Override
     public TransferObject<List<DocumentDto>> execute(final String uuid,
-                                                        final ProductType product,
-                                                        final Pageable pageable){
+                                                     final ProductType product,
+                                                     final Pageable pageable) {
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         var result = dataProvider.findAll(uuid, product, pageable);

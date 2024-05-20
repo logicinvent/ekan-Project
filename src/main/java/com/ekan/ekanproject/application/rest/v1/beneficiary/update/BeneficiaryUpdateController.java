@@ -7,6 +7,7 @@ import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
 import com.ekan.ekanproject.domain.usecase.iface.GenericSaveUseCase;
 import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.annotations.Api;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -37,7 +38,7 @@ public class BeneficiaryUpdateController implements IResourceSaveUpdate<Benefici
     public ResponseEntity<TransferObject<BeneficiaryDto>> execute(
             @RequestHeader(value = Constants.UUID) final String uuid,
             @RequestHeader(value = Constants.PRODUCT) final ProductType product,
-            @RequestBody @Validated BeneficiaryDto beneficiary) {
+            @RequestBody @Valid BeneficiaryDto beneficiary) {
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.execute(uuid, product, beneficiary));
     }

@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @Slf4j
 @RestController
 @RequestMapping("/v1/api/document-type")
@@ -36,7 +38,7 @@ public class DocumentTypeSaveController implements IResourceSaveUpdate<DocumentT
     public ResponseEntity<TransferObject<DocumentTypeDto>> execute(
             @RequestHeader(value = Constants.UUID) final String uuid,
             @RequestHeader(value = Constants.PRODUCT) final ProductType product,
-            @RequestBody @Validated DocumentTypeDto arg) {
+            @RequestBody @Valid DocumentTypeDto arg) {
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.execute(uuid, product, arg));
     }

@@ -23,9 +23,14 @@ public class BeneficiaryDataProviderImpl implements GenericDataProvider<Benefici
     @Override
     public Page<Beneficiary> findAll(final String uuid,
                                      final ProductType product,
-                                     final Pageable pageable){
+                                     final Pageable pageable) {
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
-        return repository.findAll(pageable);
+        var result = repository.findAll(pageable);
+
+        if (result.isEmpty())
+            throw new BeneficiaryNotFoundException("No results available");
+
+        return result;
 
     }
 
@@ -55,9 +60,9 @@ public class BeneficiaryDataProviderImpl implements GenericDataProvider<Benefici
     }
 
     /**
-     * @param uuid String
+     * @param uuid    String
      * @param product ProductType
-     * @param arg Long
+     * @param arg     Long
      * @return Beneficiary
      */
     @Override
@@ -67,9 +72,9 @@ public class BeneficiaryDataProviderImpl implements GenericDataProvider<Benefici
     }
 
     /**
-     * @param uuid String
+     * @param uuid    String
      * @param product ProductType
-     * @param arg Long
+     * @param arg     Long
      */
     @Override
     public void remove(String uuid, ProductType product, Long arg) {

@@ -16,9 +16,9 @@ public interface IResourceSaveUpdate<TInputPort extends InputPort, TOutputPort e
     /**
      * This feature provides access to save/update a complete information
      *
-     * @param uuid String
+     * @param uuid    String
      * @param product Product
-     * @param arg TInputPort
+     * @param arg     TInputPort
      * @return TOutputPort
      */
     @Operation(summary = "Service available to save(POST) or update(PUT) information")
@@ -29,5 +29,5 @@ public interface IResourceSaveUpdate<TInputPort extends InputPort, TOutputPort e
                     content = @Content)
     })
     ResponseEntity<TransferObject<TOutputPort>> execute(final String uuid, final ProductType product, TInputPort arg);
-    
+
 }

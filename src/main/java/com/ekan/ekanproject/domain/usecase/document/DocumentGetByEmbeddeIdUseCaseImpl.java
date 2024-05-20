@@ -26,9 +26,9 @@ public class DocumentGetByEmbeddeIdUseCaseImpl implements GenericGetByEmbeddeIdU
 
     @Override
     public TransferObject<DocumentDto> execute(final String uuid,
-                                                        final ProductType product,
-                                                        final Long beneficiaryId,
-                                                        final Long documentTypeId){
+                                               final ProductType product,
+                                               final Long beneficiaryId,
+                                               final Long documentTypeId) {
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return TransferObject.<DocumentDto>builder()

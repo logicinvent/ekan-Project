@@ -14,9 +14,9 @@ public interface IResourceRemove {
     /**
      * This feature provides access to remove information by id
      *
-     * @param uuid String
+     * @param uuid    String
      * @param product Product
-     * @param id Long
+     * @param id      Long
      * @return TOutputPort
      */
     @Operation(summary = "Service available to remove registered information by id")
@@ -27,5 +27,5 @@ public interface IResourceRemove {
                     content = @Content)
     })
     ResponseEntity<Void> execute(final String uuid, final ProductType product, Long id);
-    
+
 }

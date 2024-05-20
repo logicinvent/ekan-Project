@@ -14,6 +14,7 @@ public class BeneficiaryMapperImpl extends MapperSupport implements GenericMappe
 
     /**
      * Service available to convert DTOs to models
+     *
      * @param arg List<BeneficiaryDto>
      * @return List<Beneficiary>
      */
@@ -26,6 +27,7 @@ public class BeneficiaryMapperImpl extends MapperSupport implements GenericMappe
 
     /**
      * Service available to convert models to DTOs
+     *
      * @param arg List<Beneficiary>
      * @return List<BeneficiaryDto>
      */
@@ -45,6 +47,7 @@ public class BeneficiaryMapperImpl extends MapperSupport implements GenericMappe
 
     /**
      * Service available to convert DTO to model
+     *
      * @param arg BeneficiaryDto
      * @return Beneficiary
      */
@@ -55,6 +58,7 @@ public class BeneficiaryMapperImpl extends MapperSupport implements GenericMappe
 
     /**
      * Service available to convert model to DTO
+     *
      * @param arg Beneficiary
      * @return BeneficiaryDto
      */

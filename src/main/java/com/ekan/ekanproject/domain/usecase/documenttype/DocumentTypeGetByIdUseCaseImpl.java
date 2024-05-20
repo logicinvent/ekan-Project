@@ -25,8 +25,8 @@ public class DocumentTypeGetByIdUseCaseImpl implements GenericGetByIdUseCase<Tra
 
     @Override
     public TransferObject<DocumentTypeDto> execute(final String uuid,
-                                                        final ProductType product,
-                                                        final Long id){
+                                                   final ProductType product,
+                                                   final Long id) {
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return TransferObject.<DocumentTypeDto>builder()

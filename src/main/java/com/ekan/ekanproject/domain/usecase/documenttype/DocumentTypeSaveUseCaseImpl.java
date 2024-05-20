@@ -26,8 +26,8 @@ public class DocumentTypeSaveUseCaseImpl implements GenericSaveUseCase<TransferO
 
     @Override
     public TransferObject<DocumentTypeDto> execute(final String uuid,
-                                                        final ProductType product,
-                                                        final DocumentTypeDto arg){
+                                                   final ProductType product,
+                                                   final DocumentTypeDto arg) {
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         var result = dataProvider.save(uuid, product, mapper.dtoToModel(arg));

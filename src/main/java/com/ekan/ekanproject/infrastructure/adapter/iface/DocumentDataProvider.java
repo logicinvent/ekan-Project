@@ -5,8 +5,8 @@ import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
 public interface DocumentDataProvider<Res, Req> {
 
     Res findById(String uuid,
-             ProductType product,
-             Req arg);
+                 ProductType product,
+                 Req arg);
 
     void deleteById(String uuid, ProductType product, Req arg);
 

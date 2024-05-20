@@ -20,8 +20,8 @@ public interface IResourceGet<TOutputPort extends OutputPort> {
     /**
      * This feature provides access to the complete list of items
      *
-     * @param uuid String
-     * @param product Product
+     * @param uuid     String
+     * @param product  Product
      * @param pageable Pageable
      * @return List<TOutputPort>
      */

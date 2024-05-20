@@ -16,6 +16,7 @@ public class DocumentMapperImpl extends MapperSupport implements GenericMapper<D
 
     /**
      * Service available to convert DTOs to models
+     *
      * @param arg List<DocumentDto>
      * @return List<Document>
      */
@@ -28,6 +29,7 @@ public class DocumentMapperImpl extends MapperSupport implements GenericMapper<D
 
     /**
      * Service available to convert models to DTOs
+     *
      * @param arg List<Document>
      * @return List<DocumentDto>
      */
@@ -62,6 +64,7 @@ public class DocumentMapperImpl extends MapperSupport implements GenericMapper<D
 
     /**
      * Service available to convert DTO to model
+     *
      * @param arg DocumentDto
      * @return Document
      */
@@ -72,6 +75,7 @@ public class DocumentMapperImpl extends MapperSupport implements GenericMapper<D
 
     /**
      * Service available to convert model to DTO
+     *
      * @param arg Document
      * @return DocumentDto
      */

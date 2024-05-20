@@ -25,8 +25,8 @@ public class BeneficiaryGetByIdUseCaseImpl implements GenericGetByIdUseCase<Tran
 
     @Override
     public TransferObject<BeneficiaryDto> execute(final String uuid,
-                                                        final ProductType product,
-                                                        final Long id){
+                                                  final ProductType product,
+                                                  final Long id) {
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return TransferObject.<BeneficiaryDto>builder()

@@ -3,7 +3,6 @@ package com.ekan.ekanproject.infrastructure.annotation.listenner;
 import com.ekan.ekanproject.infrastructure.annotation.EventDateAt;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
-import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Field;
 import java.time.LocalDateTime;
