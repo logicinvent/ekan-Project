@@ -1,12 +1,15 @@
 package com.ekan.ekanproject.application.rest.v1.beneficiary.get;
 
 import com.ekan.ekanproject.application.entrypoint.resource.get.IResourceGet;
+import com.ekan.ekanproject.application.port.out.TransferObject;
 import com.ekan.ekanproject.domain.dto.beneficiary.BeneficiaryDto;
-import com.ekan.ekanproject.domain.dto.shared.product.Product;
+import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
+import com.ekan.ekanproject.domain.model.Beneficiary;
+import com.ekan.ekanproject.domain.usecase.iface.GenericGetAllUseCase;
 import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.annotations.Api;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -20,12 +23,18 @@ import java.util.List;
 @Api(tags = {"Services available to beneficiaries"})
 public class BeneficiaryGetAllController implements IResourceGet<BeneficiaryDto> {
 
-    @Override
-    @GetMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<BeneficiaryDto>> execute(
-            @RequestHeader(value = Constants.UUID) final String uuid,
-            @RequestHeader(value = Constants.PRODUCT) final Product product) {
+    private final GenericGetAllUseCase<TransferObject<List<BeneficiaryDto>>, Beneficiary> useCase;
 
-        return ResponseEntity.status(HttpStatus.OK).body(List.of(BeneficiaryDto.builder().build()));
+    public BeneficiaryGetAllController(GenericGetAllUseCase<TransferObject<List<BeneficiaryDto>>, Beneficiary> useCase) {
+        this.useCase = useCase;
+    }
+
+    @Override
+    @GetMapping()
+    public ResponseEntity<TransferObject<List<BeneficiaryDto>>> execute(
+            @RequestHeader(value = Constants.UUID) final String uuid,
+            @RequestHeader(value = Constants.PRODUCT) final ProductType product,
+            Pageable pageable) {
+        return ResponseEntity.status(HttpStatus.OK).body(useCase.execute(uuid, product, pageable));
     }
 }

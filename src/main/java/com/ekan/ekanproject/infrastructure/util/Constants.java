@@ -9,4 +9,6 @@ public class Constants {
     public static final String UUID = "UUID";
     public static final String PRODUCT = "product";
 
+    public static final String METHOD_NOT_AVAILABLE = "Method not available";
+
 }

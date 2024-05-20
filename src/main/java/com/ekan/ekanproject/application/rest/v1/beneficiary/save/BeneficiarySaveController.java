@@ -1,8 +1,10 @@
-package com.ekan.ekanproject.application.rest.v1.beneficiary.saveupdate;
+package com.ekan.ekanproject.application.rest.v1.beneficiary.save;
 
 import com.ekan.ekanproject.application.entrypoint.resource.saveupdate.IResourceSaveUpdate;
+import com.ekan.ekanproject.application.port.out.TransferObject;
 import com.ekan.ekanproject.domain.dto.beneficiary.BeneficiaryDto;
-import com.ekan.ekanproject.domain.dto.shared.product.Product;
+import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
+import com.ekan.ekanproject.domain.usecase.iface.GenericSaveUseCase;
 import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.annotations.Api;
 import org.springframework.http.HttpStatus;
@@ -17,15 +19,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/v1/api/beneficiary")
 @Api(tags = {"Services available to beneficiaries"})
-public class BeneficiarySaveUpdateControllerUpdate implements IResourceSaveUpdate<BeneficiaryDto, BeneficiaryDto> {
+public class BeneficiarySaveController implements IResourceSaveUpdate<BeneficiaryDto, BeneficiaryDto> {
+
+    private final GenericSaveUseCase<TransferObject<BeneficiaryDto>, BeneficiaryDto> useCase;
+
+    public BeneficiarySaveController(GenericSaveUseCase<TransferObject<BeneficiaryDto>, BeneficiaryDto> useCase) {
+        this.useCase = useCase;
+    }
 
     @Override
-    @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<BeneficiaryDto> execute(
+    @PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<TransferObject<BeneficiaryDto>> execute(
             @RequestHeader(value = Constants.UUID) final String uuid,
-            @RequestHeader(value = Constants.PRODUCT) final Product product,
+            @RequestHeader(value = Constants.PRODUCT) final ProductType product,
             @RequestBody BeneficiaryDto beneficiary) {
-        return ResponseEntity.status(HttpStatus.OK).body(BeneficiaryDto.builder().build());
+        return ResponseEntity.status(HttpStatus.CREATED).body(useCase.execute(uuid, product, beneficiary));
     }
 
 }

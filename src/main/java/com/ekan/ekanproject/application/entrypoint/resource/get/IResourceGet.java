@@ -1,16 +1,15 @@
 package com.ekan.ekanproject.application.entrypoint.resource.get;
 
-import com.ekan.ekanproject.application.port.in.InputPort;
 import com.ekan.ekanproject.application.port.out.OutputPort;
-import com.ekan.ekanproject.domain.dto.shared.product.Product;
+import com.ekan.ekanproject.application.port.out.TransferObject;
+import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
 import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.Authorization;
-import org.springframework.http.MediaType;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
@@ -21,6 +20,7 @@ public interface IResourceGet<TOutputPort extends OutputPort> {
      *
      * @param uuid String
      * @param product Product
+     * @param pageable Pageable
      * @return List<TOutputPort>
      */
     @ApiOperation(value = "Service available to obtain all registered beneficiaries", authorizations = {@Authorization(value = "OAuth2")})
@@ -29,6 +29,9 @@ public interface IResourceGet<TOutputPort extends OutputPort> {
             @ApiResponse(code = 201, message = Constants.UPDATE_OR_INCLUSION_CARRIED_OUT_SUCCESSFULLY),
             @ApiResponse(code = 401, message = Constants.UNAUTHORIZED_ACCESS),
             @ApiResponse(code = 500, message = Constants.UNKNOWN_ERROR)})
-    ResponseEntity<List<TOutputPort>> execute(final String uuid, final Product product);
+    ResponseEntity<TransferObject<List<TOutputPort>>> execute(
+            final String uuid,
+            final ProductType product,
+            final Pageable pageable);
 
 }
