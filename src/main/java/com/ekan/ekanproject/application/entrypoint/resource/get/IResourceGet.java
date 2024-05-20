@@ -3,16 +3,18 @@ package com.ekan.ekanproject.application.entrypoint.resource.get;
 import com.ekan.ekanproject.application.port.out.OutputPort;
 import com.ekan.ekanproject.application.port.out.TransferObject;
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
-import com.ekan.ekanproject.infrastructure.util.Constants;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
-import io.swagger.annotations.Authorization;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.List;
 
+import static com.ekan.ekanproject.infrastructure.util.Constants.RECORD_OBTAINED;
+import static com.ekan.ekanproject.infrastructure.util.Constants.UNKNOWN_ERROR;
+
+@RestControllerAdvice
 public interface IResourceGet<TOutputPort extends OutputPort> {
 
     /**
@@ -23,12 +25,13 @@ public interface IResourceGet<TOutputPort extends OutputPort> {
      * @param pageable Pageable
      * @return List<TOutputPort>
      */
-    @ApiOperation(value = "Service available to obtain all registered beneficiaries", authorizations = {@Authorization(value = "OAuth2")})
+    @Operation(summary = "Service available to obtain all records")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = Constants.REQUEST_COMPLETED_SUCCESSFULLY),
-            @ApiResponse(code = 201, message = Constants.UPDATE_OR_INCLUSION_CARRIED_OUT_SUCCESSFULLY),
-            @ApiResponse(code = 401, message = Constants.UNAUTHORIZED_ACCESS),
-            @ApiResponse(code = 500, message = Constants.UNKNOWN_ERROR)})
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200",
+                    description = RECORD_OBTAINED),
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400",
+                    description = UNKNOWN_ERROR)
+    })
     ResponseEntity<TransferObject<List<TOutputPort>>> execute(
             final String uuid,
             final ProductType product,

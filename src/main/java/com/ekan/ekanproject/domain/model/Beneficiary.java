@@ -1,7 +1,12 @@
 package com.ekan.ekanproject.domain.model;
 
+import com.ekan.ekanproject.infrastructure.annotation.EventDateAt;
+import com.ekan.ekanproject.infrastructure.annotation.UpdatedAt;
+import com.ekan.ekanproject.infrastructure.annotation.listenner.EventDateAtListener;
+import com.ekan.ekanproject.infrastructure.annotation.listenner.UpdatedDateAtListener;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -9,10 +14,12 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Entity
 @Table(name = "BENEFICIARY")
+@EntityListeners({UpdatedDateAtListener.class, EventDateAtListener.class})
 public class Beneficiary {
 
     @Id
@@ -29,11 +36,13 @@ public class Beneficiary {
     @Column(name = "birthday")
     private LocalDate birthDay;
 
-    @Column(name = "eventdate")
-    private LocalDate eventDate;
+    @EventDateAt
+    @Column(name = "eventDate")
+    private LocalDateTime eventDate;
 
-    @Column(name = "updatedate")
-    private LocalDate updateDate;
+    @UpdatedAt
+    @Column(name = "updateDate")
+    private LocalDateTime updateDate;
 
     public Beneficiary setId(Long id) {
         this.id = id;
@@ -55,12 +64,12 @@ public class Beneficiary {
         return this;
     }
 
-    public Beneficiary setEventDate(LocalDate eventDate) {
+    public Beneficiary setEventDate(LocalDateTime eventDate) {
         this.eventDate = eventDate;
         return this;
     }
 
-    public Beneficiary setUpdateDate(LocalDate updateDate) {
+    public Beneficiary setUpdateDate(LocalDateTime updateDate) {
         this.updateDate = updateDate;
         return this;
     }

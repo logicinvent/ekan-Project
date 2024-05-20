@@ -7,15 +7,18 @@ import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
 import com.ekan.ekanproject.domain.usecase.iface.GenericSaveUseCase;
 import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 @RequestMapping("/v1/api/beneficiary")
 @Api(tags = {"Services available to beneficiaries"})
@@ -28,11 +31,14 @@ public class BeneficiarySaveController implements IResourceSaveUpdate<Beneficiar
     }
 
     @Override
-    @PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<TransferObject<BeneficiaryDto>> execute(
             @RequestHeader(value = Constants.UUID) final String uuid,
             @RequestHeader(value = Constants.PRODUCT) final ProductType product,
-            @RequestBody BeneficiaryDto beneficiary) {
+            @RequestBody @Validated BeneficiaryDto beneficiary) {
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.execute(uuid, product, beneficiary));
     }
 

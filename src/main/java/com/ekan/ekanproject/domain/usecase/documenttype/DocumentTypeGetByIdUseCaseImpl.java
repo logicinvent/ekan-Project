@@ -7,8 +7,10 @@ import com.ekan.ekanproject.domain.dto.shared.mapper.GenericMapper;
 import com.ekan.ekanproject.domain.model.DocumentType;
 import com.ekan.ekanproject.domain.usecase.iface.GenericGetByIdUseCase;
 import com.ekan.ekanproject.infrastructure.adapter.iface.GenericDataProvider;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class DocumentTypeGetByIdUseCaseImpl implements GenericGetByIdUseCase<TransferObject<DocumentTypeDto>> {
 
@@ -26,6 +28,7 @@ public class DocumentTypeGetByIdUseCaseImpl implements GenericGetByIdUseCase<Tra
                                                         final ProductType product,
                                                         final Long id){
 
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return TransferObject.<DocumentTypeDto>builder()
                 .content(mapper.modelToDto(dataProvider.findById(uuid, product, id)))
                 .build();

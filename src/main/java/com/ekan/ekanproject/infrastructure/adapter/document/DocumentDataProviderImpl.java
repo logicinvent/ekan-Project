@@ -1,6 +1,7 @@
-package com.ekan.ekanproject.infrastructure.adapter.beneficiary;
+package com.ekan.ekanproject.infrastructure.adapter.document;
 
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
+import com.ekan.ekanproject.domain.exception.DocumentNotFoundException;
 import com.ekan.ekanproject.domain.model.Document;
 import com.ekan.ekanproject.domain.model.DocumentId;
 import com.ekan.ekanproject.infrastructure.adapter.iface.DocumentDataProvider;
@@ -28,7 +29,7 @@ public class DocumentDataProviderImpl implements GenericDataProvider<Document, D
     public Page<Document> findAll(final String uuid,
                                      final ProductType product,
                                      final Pageable pageable){
-
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return repository.findAll(pageable);
 
     }
@@ -39,6 +40,7 @@ public class DocumentDataProviderImpl implements GenericDataProvider<Document, D
      * @param arg
      * @return
      */
+    @Deprecated
     @Override
     public Document findById(String uuid, ProductType product, Long arg) {
         log.warn(METHOD_NOT_AVAILABLE);
@@ -46,7 +48,9 @@ public class DocumentDataProviderImpl implements GenericDataProvider<Document, D
     }
 
     public Document findById(String uuid, ProductType product, DocumentId arg) {
-        return repository.findById(arg).orElseThrow();
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
+        return repository.findById(arg)
+                .orElseThrow(() -> new DocumentNotFoundException("Document not found with id: " + arg));
     }
 
     /**
@@ -56,6 +60,7 @@ public class DocumentDataProviderImpl implements GenericDataProvider<Document, D
      */
     @Override
     public void deleteById(String uuid, ProductType product, DocumentId arg) {
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         repository.deleteById(arg);
     }
 
@@ -67,6 +72,7 @@ public class DocumentDataProviderImpl implements GenericDataProvider<Document, D
      */
     @Override
     public Document save(String uuid, ProductType product, Document arg) {
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return repository.save(arg);
     }
 
@@ -78,6 +84,7 @@ public class DocumentDataProviderImpl implements GenericDataProvider<Document, D
      */
     @Override
     public Document update(String uuid, ProductType product, Document arg) {
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return repository.save(arg);
     }
 

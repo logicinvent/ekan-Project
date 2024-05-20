@@ -1,14 +1,14 @@
 package com.ekan.ekanproject.domain.usecase.document;
 
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
-import com.ekan.ekanproject.domain.model.Beneficiary;
 import com.ekan.ekanproject.domain.model.Document;
 import com.ekan.ekanproject.domain.model.DocumentId;
-import com.ekan.ekanproject.domain.model.DocumentType;
 import com.ekan.ekanproject.domain.usecase.iface.GenericRemoveByEmbeddeIdUseCase;
 import com.ekan.ekanproject.infrastructure.adapter.iface.DocumentDataProvider;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class DocumentRemoveByEmbeddedIdUseCaseImpl implements GenericRemoveByEmbeddeIdUseCase {
 
@@ -24,10 +24,12 @@ public class DocumentRemoveByEmbeddedIdUseCaseImpl implements GenericRemoveByEmb
                         final ProductType product,
                         final Long beneficiaryId,
                         final Long documentTypeId){
+
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         dataProvider.deleteById(uuid, product,
                 new DocumentId()
-                        .setBeneficiary(new Beneficiary().setId(beneficiaryId))
-                        .setDocumentType(new DocumentType().setId(documentTypeId)));
+                        .setBeneficiary(beneficiaryId)
+                        .setDocumentType(documentTypeId));
     }
 
 

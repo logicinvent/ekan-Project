@@ -7,15 +7,18 @@ import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
 import com.ekan.ekanproject.domain.usecase.iface.GenericSaveUseCase;
 import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 @RequestMapping("/v1/api/document")
 @Api(tags = {"Services available to documents"})
@@ -29,11 +32,13 @@ public class DocumentUpdateController implements IResourceSaveUpdate<DocumentDto
 
 
     @Override
-    @PutMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<TransferObject<DocumentDto>> execute(
             @RequestHeader(value = Constants.UUID) final String uuid,
             @RequestHeader(value = Constants.PRODUCT) final ProductType product,
             @RequestBody DocumentDto document) {
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return ResponseEntity.status(HttpStatus.CREATED).body(useCase.execute(uuid, product, document));
     }
 

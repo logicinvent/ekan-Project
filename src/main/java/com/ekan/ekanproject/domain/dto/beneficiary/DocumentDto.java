@@ -6,7 +6,7 @@ import com.ekan.ekanproject.domain.model.DocumentId;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -16,7 +16,7 @@ public class DocumentDto implements InputPort, OutputPort {
     private DocumentTypeDto documentType;
     private BeneficiaryDto beneficiary;
     private String description;
-    private LocalDate eventDate;
-    private LocalDate updateDate;
+    private LocalDateTime eventDate;
+    private LocalDateTime updateDate;
 
 }

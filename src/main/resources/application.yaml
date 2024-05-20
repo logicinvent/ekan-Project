@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/product
-    username: postgres!
-    password: postgres!
+    url: jdbc:postgresql://localhost:5432/beneficiaries
+    username: ekan@2319!
+    password: ekan@2319!
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -10,3 +10,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+springdoc:
+  packages-to-scan: com.ekan.ekanproject.application.rest
+  enable-data-rest: false

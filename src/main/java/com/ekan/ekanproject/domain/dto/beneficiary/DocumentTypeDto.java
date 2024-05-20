@@ -2,6 +2,7 @@ package com.ekan.ekanproject.domain.dto.beneficiary;
 
 import com.ekan.ekanproject.application.port.in.InputPort;
 import com.ekan.ekanproject.application.port.out.OutputPort;
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 
@@ -10,6 +11,8 @@ import lombok.Data;
 public class DocumentTypeDto implements InputPort, OutputPort {
 
     private Long id;
+
+    @NotNull(message = "The 'description' field is mandatory.")
     private String description;
 
 }

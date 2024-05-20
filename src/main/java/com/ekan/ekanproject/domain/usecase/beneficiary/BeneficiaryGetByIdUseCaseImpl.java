@@ -7,8 +7,10 @@ import com.ekan.ekanproject.domain.dto.shared.mapper.GenericMapper;
 import com.ekan.ekanproject.domain.model.Beneficiary;
 import com.ekan.ekanproject.domain.usecase.iface.GenericGetByIdUseCase;
 import com.ekan.ekanproject.infrastructure.adapter.iface.GenericDataProvider;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class BeneficiaryGetByIdUseCaseImpl implements GenericGetByIdUseCase<TransferObject<BeneficiaryDto>> {
 
@@ -26,6 +28,7 @@ public class BeneficiaryGetByIdUseCaseImpl implements GenericGetByIdUseCase<Tran
                                                         final ProductType product,
                                                         final Long id){
 
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return TransferObject.<BeneficiaryDto>builder()
                 .content(mapper.modelToDto(dataProvider.findById(uuid, product, id)))
                 .build();

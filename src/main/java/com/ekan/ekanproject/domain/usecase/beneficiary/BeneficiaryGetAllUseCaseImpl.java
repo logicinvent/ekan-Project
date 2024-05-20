@@ -7,11 +7,13 @@ import com.ekan.ekanproject.domain.dto.shared.mapper.GenericMapper;
 import com.ekan.ekanproject.domain.model.Beneficiary;
 import com.ekan.ekanproject.domain.usecase.iface.GenericGetAllUseCase;
 import com.ekan.ekanproject.infrastructure.adapter.iface.GenericDataProvider;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class BeneficiaryGetAllUseCaseImpl implements GenericGetAllUseCase<TransferObject<List<BeneficiaryDto>>, Beneficiary> {
 
@@ -29,6 +31,7 @@ public class BeneficiaryGetAllUseCaseImpl implements GenericGetAllUseCase<Transf
                                                         final ProductType product,
                                                         final Pageable pageable){
 
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         var result = dataProvider.findAll(uuid, product, pageable);
 
         if (result.isEmpty())

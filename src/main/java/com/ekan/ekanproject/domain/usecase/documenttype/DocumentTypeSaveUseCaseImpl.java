@@ -7,8 +7,10 @@ import com.ekan.ekanproject.domain.dto.shared.mapper.GenericMapper;
 import com.ekan.ekanproject.domain.model.DocumentType;
 import com.ekan.ekanproject.domain.usecase.iface.GenericSaveUseCase;
 import com.ekan.ekanproject.infrastructure.adapter.iface.GenericDataProvider;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class DocumentTypeSaveUseCaseImpl implements GenericSaveUseCase<TransferObject<DocumentTypeDto>, DocumentTypeDto> {
 
@@ -27,6 +29,7 @@ public class DocumentTypeSaveUseCaseImpl implements GenericSaveUseCase<TransferO
                                                         final ProductType product,
                                                         final DocumentTypeDto arg){
 
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         var result = dataProvider.save(uuid, product, mapper.dtoToModel(arg));
 
         return TransferObject.<DocumentTypeDto>builder()

@@ -1,12 +1,12 @@
 package com.ekan.ekanproject.application.entrypoint.resource.remove;
 
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
-import com.ekan.ekanproject.infrastructure.util.Constants;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
-import io.swagger.annotations.Authorization;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
 import org.springframework.http.ResponseEntity;
+
+import static com.ekan.ekanproject.infrastructure.util.Constants.RECORD_REMOVED;
+import static com.ekan.ekanproject.infrastructure.util.Constants.UNKNOWN_ERROR;
 
 public interface IResourceRemoveByEmbeddedId {
 
@@ -19,12 +19,13 @@ public interface IResourceRemoveByEmbeddedId {
      * @param id_2 Long
      * @return TOutputPort
      */
-    @ApiOperation(value = "Service available to remove registered beneficiary by id", authorizations = {@Authorization(value = "OAuth2")})
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = Constants.REQUEST_COMPLETED_SUCCESSFULLY),
-            @ApiResponse(code = 201, message = Constants.UPDATE_OR_INCLUSION_CARRIED_OUT_SUCCESSFULLY),
-            @ApiResponse(code = 401, message = Constants.UNAUTHORIZED_ACCESS),
-            @ApiResponse(code = 500, message = Constants.UNKNOWN_ERROR)})
+    @Operation(summary = "Service available to remove registered information by composite key")
+    @io.swagger.v3.oas.annotations.responses.ApiResponses(value = {
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = RECORD_REMOVED,
+                    content = {@Content(mediaType = "application/json")}),
+            @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = UNKNOWN_ERROR,
+                    content = @Content)
+    })
     ResponseEntity<Void> execute(final String uuid, final ProductType product, Long id_1, Long id_2);
     
 }

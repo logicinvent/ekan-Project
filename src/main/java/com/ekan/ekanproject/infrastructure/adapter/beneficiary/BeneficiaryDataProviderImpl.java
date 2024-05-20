@@ -1,13 +1,16 @@
 package com.ekan.ekanproject.infrastructure.adapter.beneficiary;
 
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
+import com.ekan.ekanproject.domain.exception.BeneficiaryNotFoundException;
 import com.ekan.ekanproject.domain.model.Beneficiary;
 import com.ekan.ekanproject.infrastructure.adapter.iface.GenericDataProvider;
 import com.ekan.ekanproject.infrastructure.repository.BeneficiaryRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class BeneficiaryDataProviderImpl implements GenericDataProvider<Beneficiary, Beneficiary> {
 
@@ -21,7 +24,7 @@ public class BeneficiaryDataProviderImpl implements GenericDataProvider<Benefici
     public Page<Beneficiary> findAll(final String uuid,
                                      final ProductType product,
                                      final Pageable pageable){
-
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return repository.findAll(pageable);
 
     }
@@ -34,7 +37,9 @@ public class BeneficiaryDataProviderImpl implements GenericDataProvider<Benefici
      */
     @Override
     public Beneficiary findById(String uuid, ProductType product, Long arg) {
-        return repository.findById(arg).orElseThrow();
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
+        return repository.findById(arg)
+                .orElseThrow(() -> new BeneficiaryNotFoundException("Beneficiary not found with id: " + arg));
     }
 
     /**
@@ -45,6 +50,7 @@ public class BeneficiaryDataProviderImpl implements GenericDataProvider<Benefici
      */
     @Override
     public Beneficiary save(String uuid, ProductType product, Beneficiary arg) {
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return repository.save(arg);
     }
 
@@ -56,6 +62,7 @@ public class BeneficiaryDataProviderImpl implements GenericDataProvider<Benefici
      */
     @Override
     public Beneficiary update(String uuid, ProductType product, Beneficiary arg) {
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         return repository.save(arg);
     }
 
@@ -66,6 +73,7 @@ public class BeneficiaryDataProviderImpl implements GenericDataProvider<Benefici
      */
     @Override
     public void remove(String uuid, ProductType product, Long arg) {
+        log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         repository.deleteById(arg);
     }
 

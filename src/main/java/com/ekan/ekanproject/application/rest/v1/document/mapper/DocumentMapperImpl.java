@@ -1,5 +1,6 @@
 package com.ekan.ekanproject.application.rest.v1.document.mapper;
 
+import com.ekan.ekanproject.domain.dto.beneficiary.BeneficiaryDto;
 import com.ekan.ekanproject.domain.dto.beneficiary.DocumentDto;
 import com.ekan.ekanproject.domain.dto.beneficiary.DocumentTypeDto;
 import com.ekan.ekanproject.domain.dto.shared.mapper.GenericMapper;
@@ -37,9 +38,21 @@ public class DocumentMapperImpl extends MapperSupport implements GenericMapper<D
                         .id(e.getId())
                         .documentType(
                                 DocumentTypeDto.builder()
-                                        .description(e.getId().getDocumentType().getDescription())
+                                        .description(e.getDocumentType().getDescription())
                                         .build()
                         )
+                        .beneficiary(BeneficiaryDto.builder()
+                                .id(e.getBeneficiary().getId())
+                                .name(e.getBeneficiary().getName())
+                                .phone(e.getBeneficiary().getPhone())
+                                .birthDay(e.getBeneficiary().getBirthDay())
+                                .updateDate(e.getBeneficiary().getUpdateDate())
+                                .eventDate(e.getBeneficiary().getEventDate())
+                                .build())
+                        .documentType(DocumentTypeDto.builder()
+                                .id(e.getBeneficiary().getId())
+                                .description(e.getDocumentType().getDescription())
+                                .build())
                         .description(e.getDescription())
                         .eventDate(e.getEventDate())
                         .updateDate(e.getUpdateDate())
@@ -68,9 +81,21 @@ public class DocumentMapperImpl extends MapperSupport implements GenericMapper<D
                 .id(arg.getId())
                 .documentType(
                         DocumentTypeDto.builder()
-                                .description(arg.getId().getDocumentType().getDescription())
+                                .description(arg.getDocumentType().getDescription())
                                 .build()
                 )
+                .beneficiary(BeneficiaryDto.builder()
+                        .id(arg.getBeneficiary().getId())
+                        .name(arg.getBeneficiary().getName())
+                        .phone(arg.getBeneficiary().getPhone())
+                        .birthDay(arg.getBeneficiary().getBirthDay())
+                        .updateDate(arg.getBeneficiary().getUpdateDate())
+                        .eventDate(arg.getBeneficiary().getEventDate())
+                        .build())
+                .documentType(DocumentTypeDto.builder()
+                        .id(arg.getDocumentType().getId())
+                        .description(arg.getDocumentType().getDescription())
+                        .build())
                 .description(arg.getDescription())
                 .eventDate(arg.getEventDate())
                 .updateDate(arg.getUpdateDate())

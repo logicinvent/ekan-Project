@@ -2,8 +2,8 @@ services:
   postgres:
     image: postgres
     environment:
-      - POSTGRES_PASSWORD=postgres!
-      - POSTGRES_USER=postgres!
-      - POSTGRES_DB=product
+      - POSTGRES_PASSWORD=ekan@2319!
+      - POSTGRES_USER=ekan@2319!
+      - POSTGRES_DB=beneficiaries
     ports:
       - "5432:5432"

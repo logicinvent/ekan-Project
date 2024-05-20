@@ -8,6 +8,9 @@ public class Constants {
     public static final  String UNKNOWN_ERROR = "Unknown error";
     public static final String UUID = "UUID";
     public static final String PRODUCT = "product";
+    public static final String RECORD_CREATED = "Record created";
+    public static final String RECORD_REMOVED = "Record removed";
+    public static final String RECORD_OBTAINED = "Records obtained";
 
     public static final String METHOD_NOT_AVAILABLE = "Method not available";
 
