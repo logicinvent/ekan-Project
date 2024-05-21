@@ -8,7 +8,7 @@ The project was developed to present hexagonal architecture, white label model, 
 
 I developed that App to present new features and architecture hexagonal, I used custom annotations to insert date values dynamically and some concepts of how to work with adapters and use cases, and some unit tests were developed for the App.
 
-## Pre-requists
+## Prerequisite
 
 #### You will need some basic stuffs to run this app
 
