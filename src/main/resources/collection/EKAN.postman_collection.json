@@ -1,0 +1,2250 @@
+{
+	"info": {
+		"_postman_id": "88856acd-d563-48d5-a6ca-b58b84e67f75",
+		"name": "EKAN",
+		"description": "Beneficiaries Api\n\nContact Support:\n Name: Jean Fernandes\n Email: jfernandes@",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3572260"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "api",
+					"item": [
+						{
+							"name": "document",
+							"item": [
+								{
+									"name": "update",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "<string>",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": {\n    \"beneficiaryId\": 1,\n    \"documentTypeId\": 1\n  },\n  \"documentType\": {\n    \"id\": 1\n  },\n  \"beneficiary\": {\n    \"id\": 1\n  },\n  \"description\": \"aloha\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/document",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"document"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update or inclusion carried out successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": {\n    \"documentType\": {\n      \"id\": \"<long>\",\n      \"description\": \"<string>\"\n    },\n    \"beneficiary\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"birthDay\": \"<date>\",\n      \"eventDate\": \"<date>\",\n      \"updateDate\": \"<date>\"\n    }\n  },\n  \"documentType\": {\n    \"id\": \"<long>\",\n    \"description\": \"<string>\"\n  },\n  \"beneficiary\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"birthDay\": \"<date>\",\n    \"eventDate\": \"<date>\",\n    \"updateDate\": \"<date>\"\n  },\n  \"description\": \"<string>\",\n  \"eventDate\": \"<date>\",\n  \"updateDate\": \"<date>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document",
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": {\n    \"documentType\": {\n      \"id\": \"<long>\",\n      \"description\": \"<string>\"\n    },\n    \"beneficiary\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"birthDay\": \"<date>\",\n      \"eventDate\": \"<date>\",\n      \"updateDate\": \"<date>\"\n    }\n  },\n  \"documentType\": {\n    \"id\": \"<long>\",\n    \"description\": \"<string>\"\n  },\n  \"beneficiary\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"birthDay\": \"<date>\",\n    \"eventDate\": \"<date>\",\n    \"updateDate\": \"<date>\"\n  },\n  \"description\": \"<string>\",\n  \"eventDate\": \"<date>\",\n  \"updateDate\": \"<date>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document",
+														""
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "save",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": {\n    \"beneficiaryId\": 1,\n    \"documentTypeId\": 1\n  },\n  \"documentType\": {\n    \"id\": 1\n  },\n  \"beneficiary\": {\n    \"id\": 1\n  },\n  \"description\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/document",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"document"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update or inclusion carried out successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": {\n    \"documentType\": {\n      \"id\": \"<long>\",\n      \"description\": \"<string>\"\n    },\n    \"beneficiary\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"birthDay\": \"<date>\",\n      \"eventDate\": \"<date>\",\n      \"updateDate\": \"<date>\"\n    }\n  },\n  \"documentType\": {\n    \"id\": \"<long>\",\n    \"description\": \"<string>\"\n  },\n  \"beneficiary\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"birthDay\": \"<date>\",\n    \"eventDate\": \"<date>\",\n    \"updateDate\": \"<date>\"\n  },\n  \"description\": \"<string>\",\n  \"eventDate\": \"<date>\",\n  \"updateDate\": \"<date>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document",
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": {\n    \"documentType\": {\n      \"id\": \"<long>\",\n      \"description\": \"<string>\"\n    },\n    \"beneficiary\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"birthDay\": \"<date>\",\n      \"eventDate\": \"<date>\",\n      \"updateDate\": \"<date>\"\n    }\n  },\n  \"documentType\": {\n    \"id\": \"<long>\",\n    \"description\": \"<string>\"\n  },\n  \"beneficiary\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"birthDay\": \"<date>\",\n    \"eventDate\": \"<date>\",\n    \"updateDate\": \"<date>\"\n  },\n  \"description\": \"<string>\",\n  \"eventDate\": \"<date>\",\n  \"updateDate\": \"<date>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document",
+														""
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "all",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/document?page=0&size=5",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"document"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0",
+													"description": "(Required) "
+												},
+												{
+													"key": "size",
+													"value": "5",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Records obtained",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document?page=<integer>&size=<integer>&sort=<string>,<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "size",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "sort",
+															"value": "<string>,<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document?page=<integer>&size=<integer>&sort=<string>,<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "size",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "sort",
+															"value": "<string>,<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "get by id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "<string>",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/document/1/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"document",
+												"1",
+												"1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Records obtained",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document/:beneficiaryId/:documentTypeId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document",
+														":beneficiaryId",
+														":documentTypeId"
+													],
+													"variable": [
+														{
+															"key": "beneficiaryId"
+														},
+														{
+															"key": "documentTypeId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document/:beneficiaryId/:documentTypeId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document",
+														":beneficiaryId",
+														":documentTypeId"
+													],
+													"variable": [
+														{
+															"key": "beneficiaryId"
+														},
+														{
+															"key": "documentTypeId"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "remove",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/document/1/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"document",
+												"1",
+												"1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Record removed",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document/:beneficiaryId/:documentTypeId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document",
+														":beneficiaryId",
+														":documentTypeId"
+													],
+													"variable": [
+														{
+															"key": "beneficiaryId"
+														},
+														{
+															"key": "documentTypeId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document/:beneficiaryId/:documentTypeId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document",
+														":beneficiaryId",
+														":documentTypeId"
+													],
+													"variable": [
+														{
+															"key": "beneficiaryId"
+														},
+														{
+															"key": "documentTypeId"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "document-type",
+							"item": [
+								{
+									"name": "update",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"1\",\n  \"description\": \"RG\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/document-type",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"document-type"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update or inclusion carried out successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"description\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document-type/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document-type",
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"description\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document-type/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document-type",
+														""
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "save",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\": \"CNH\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/document-type",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"document-type"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update or inclusion carried out successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"description\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document-type/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document-type",
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"description\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document-type/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document-type",
+														""
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "get by id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/document-type/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"document-type",
+												"1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Records obtained",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document-type?page=<integer>&size=<integer>&sort=<string>,<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document-type"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "size",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "sort",
+															"value": "<string>,<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document-type?page=<integer>&size=<integer>&sort=<string>,<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document-type"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "size",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "sort",
+															"value": "<string>,<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "remove",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/document-type/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"document-type",
+												"1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Record removed",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document-type/:id/remove",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document-type",
+														":id",
+														"remove"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document-type/:id/remove",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document-type",
+														":id",
+														"remove"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "all",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/document-type?page=0&size=2",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"document-type"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Records obtained",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document-type/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document-type",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/document-type/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"document-type",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "beneficiary",
+							"item": [
+								{
+									"name": "update",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": 1,\n    \"name\": \"Jean Fernandes Citron\",\n    \"phone\": \"11998889876\",\n    \"birthDay\": \"2024-03-05\",\n    \"eventDate\": \"2024-05-21T05:14:52.807716\",\n    \"updateDate\": \"2024-05-21T05:14:52.807626\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/beneficiary",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"beneficiary"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update or inclusion carried out successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"birthDay\": \"<date>\",\n  \"eventDate\": \"<date>\",\n  \"updateDate\": \"<date>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/beneficiary/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"beneficiary",
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"birthDay\": \"<date>\",\n  \"eventDate\": \"<date>\",\n  \"updateDate\": \"<date>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/beneficiary/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"beneficiary",
+														""
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "save",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Jean Fernandes\",\n    \"phone\": \"11998889876\",\n    \"birthDay\": \"2024-03-05\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/beneficiary",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"beneficiary"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update or inclusion carried out successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"birthDay\": \"<date>\",\n  \"eventDate\": \"<date>\",\n  \"updateDate\": \"<date>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/beneficiary/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"beneficiary",
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"birthDay\": \"<date>\",\n  \"eventDate\": \"<date>\",\n  \"updateDate\": \"<date>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/beneficiary/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"beneficiary",
+														""
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "all",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/beneficiary?page=0&size=2",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"beneficiary"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0",
+													"description": "(Required) "
+												},
+												{
+													"key": "size",
+													"value": "2",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Records obtained",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/beneficiary?page=<integer>&size=<integer>&sort=<string>,<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"beneficiary"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "size",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "sort",
+															"value": "<string>,<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/beneficiary?page=<integer>&size=<integer>&sort=<string>,<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"beneficiary"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "size",
+															"value": "<integer>",
+															"description": "(Required) "
+														},
+														{
+															"key": "sort",
+															"value": "<string>,<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "get by id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/beneficiary/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"beneficiary",
+												"1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Records obtained",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/beneficiary/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"beneficiary",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/beneficiary/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"beneficiary",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "remove",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "UUID",
+												"value": "{{$randomUUID}}",
+												"description": "(Required) "
+											},
+											{
+												"key": "product",
+												"value": "EKAN",
+												"description": "(Required) "
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/v1/api/beneficiary/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"api",
+												"beneficiary",
+												"1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Record removed",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/beneficiary/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"beneficiary",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unknown error",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "UUID",
+														"value": "<string>",
+														"description": "(Required) "
+													},
+													{
+														"key": "product",
+														"value": "EKAN",
+														"description": "(Required) "
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/v1/api/beneficiary/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"v1",
+														"api",
+														"beneficiary",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
