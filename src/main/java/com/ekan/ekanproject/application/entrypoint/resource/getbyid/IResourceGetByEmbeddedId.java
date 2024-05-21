@@ -8,8 +8,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.ResponseEntity;
 
-import static com.ekan.ekanproject.infrastructure.util.Constants.RECORD_OBTAINED;
-import static com.ekan.ekanproject.infrastructure.util.Constants.UNKNOWN_ERROR;
+import static com.ekan.ekanproject.infrastructure.util.Constants.*;
 
 public interface IResourceGetByEmbeddedId<TOutputPort extends OutputPort> {
 
@@ -20,9 +19,9 @@ public interface IResourceGetByEmbeddedId<TOutputPort extends OutputPort> {
      * @param product Product
      * @param id_1    Long
      * @param id_2    Long
-     * @return TOutputPort
+     * @return TransferObject<TOutputPort>
      */
-    @Operation(summary = "Service available to obtain registered information by composite key")
+    @Operation(summary = SERVICE_AVAILABLE_TO_OBTAIN_REGISTERED_INFORMATION_BY_COMPOSITE_KEY)
     @ApiResponses(value = {
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = RECORD_OBTAINED,
                     content = {@Content(mediaType = "application/json")}),

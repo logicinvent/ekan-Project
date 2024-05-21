@@ -9,6 +9,11 @@ import java.time.LocalDateTime;
 
 public class UpdatedDateAtListener {
 
+    /**
+     * Annotation available to insert new update date in the field
+     * @param entity
+     * @throws IllegalAccessException
+     */
     @PrePersist
     @PreUpdate
     public void setUpdatedAt(Object entity) throws IllegalAccessException {

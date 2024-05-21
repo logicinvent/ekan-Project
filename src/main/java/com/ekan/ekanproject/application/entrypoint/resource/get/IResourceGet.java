@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.List;
 
-import static com.ekan.ekanproject.infrastructure.util.Constants.RECORD_OBTAINED;
-import static com.ekan.ekanproject.infrastructure.util.Constants.UNKNOWN_ERROR;
+import static com.ekan.ekanproject.infrastructure.util.Constants.*;
 
 @RestControllerAdvice
 public interface IResourceGet<TOutputPort extends OutputPort> {
@@ -23,9 +22,9 @@ public interface IResourceGet<TOutputPort extends OutputPort> {
      * @param uuid     String
      * @param product  Product
      * @param pageable Pageable
-     * @return List<TOutputPort>
+     * @return TransferObject<List<TOutputPort>>
      */
-    @Operation(summary = "Service available to obtain all records")
+    @Operation(summary = SERVICE_AVAILABLE_TO_OBTAIN_ALL_RECORDS)
     @ApiResponses(value = {
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200",
                     description = RECORD_OBTAINED),

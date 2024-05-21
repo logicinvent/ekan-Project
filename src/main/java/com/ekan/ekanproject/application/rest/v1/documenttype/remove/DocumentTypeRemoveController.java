@@ -27,7 +27,6 @@ public class DocumentTypeRemoveController implements IResourceRemove {
         this.useCase = useCase;
     }
 
-
     @Override
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> execute(

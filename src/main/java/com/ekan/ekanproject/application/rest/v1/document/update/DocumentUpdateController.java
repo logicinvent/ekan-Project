@@ -2,7 +2,7 @@ package com.ekan.ekanproject.application.rest.v1.document.update;
 
 import com.ekan.ekanproject.application.entrypoint.resource.saveupdate.IResourceSaveUpdate;
 import com.ekan.ekanproject.application.port.out.TransferObject;
-import com.ekan.ekanproject.domain.dto.beneficiary.DocumentDto;
+import com.ekan.ekanproject.domain.dto.document.DocumentDto;
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
 import com.ekan.ekanproject.domain.usecase.iface.GenericSaveUseCase;
 import com.ekan.ekanproject.infrastructure.util.Constants;

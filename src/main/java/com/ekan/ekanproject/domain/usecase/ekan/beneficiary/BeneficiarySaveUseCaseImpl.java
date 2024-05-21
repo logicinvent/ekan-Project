@@ -1,4 +1,4 @@
-package com.ekan.ekanproject.domain.usecase.beneficiary;
+package com.ekan.ekanproject.domain.usecase.ekan.beneficiary;
 
 import com.ekan.ekanproject.application.port.out.TransferObject;
 import com.ekan.ekanproject.domain.dto.beneficiary.BeneficiaryDto;
@@ -29,10 +29,9 @@ public class BeneficiarySaveUseCaseImpl implements GenericSaveUseCase<TransferOb
                                                   final BeneficiaryDto arg) {
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
-        var result = dataProvider.save(uuid, product, mapper.dtoToModel(arg));
 
         return TransferObject.<BeneficiaryDto>builder()
-                .content(mapper.modelToDto(result))
+                .content(mapper.modelToDto(dataProvider.save(uuid, product, mapper.dtoToModel(arg))))
                 .build();
 
     }

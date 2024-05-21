@@ -1,12 +1,12 @@
 package com.ekan.ekanproject.application.entrypoint.resource.remove;
 
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
+import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import org.springframework.http.ResponseEntity;
 
-import static com.ekan.ekanproject.infrastructure.util.Constants.RECORD_REMOVED;
-import static com.ekan.ekanproject.infrastructure.util.Constants.UNKNOWN_ERROR;
+import static com.ekan.ekanproject.infrastructure.util.Constants.*;
 
 public interface IResourceRemoveByEmbeddedId {
 
@@ -19,7 +19,7 @@ public interface IResourceRemoveByEmbeddedId {
      * @param id_2    Long
      * @return TOutputPort
      */
-    @Operation(summary = "Service available to remove registered information by composite key")
+    @Operation(summary = SERVICE_AVAILABLE_TO_REMOVE_REGISTERED_INFORMATION_BY_COMPOSITE_KEY)
     @io.swagger.v3.oas.annotations.responses.ApiResponses(value = {
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = RECORD_REMOVED,
                     content = {@Content(mediaType = "application/json")}),

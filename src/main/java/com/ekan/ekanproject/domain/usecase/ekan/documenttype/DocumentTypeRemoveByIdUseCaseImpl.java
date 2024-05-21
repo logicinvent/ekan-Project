@@ -1,7 +1,7 @@
-package com.ekan.ekanproject.domain.usecase.beneficiary;
+package com.ekan.ekanproject.domain.usecase.ekan.documenttype;
 
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
-import com.ekan.ekanproject.domain.model.Beneficiary;
+import com.ekan.ekanproject.domain.model.DocumentType;
 import com.ekan.ekanproject.domain.usecase.iface.GenericRemoveByIdUseCase;
 import com.ekan.ekanproject.infrastructure.adapter.iface.GenericDataProvider;
 import lombok.extern.slf4j.Slf4j;
@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class BeneficiaryRemoveByIdUseCaseImpl implements GenericRemoveByIdUseCase {
+public class DocumentTypeRemoveByIdUseCaseImpl implements GenericRemoveByIdUseCase {
 
-    private final GenericDataProvider<Beneficiary, Beneficiary> dataProvider;
+    private final GenericDataProvider<DocumentType, DocumentType> dataProvider;
 
-    public BeneficiaryRemoveByIdUseCaseImpl(GenericDataProvider<Beneficiary, Beneficiary> dataProvider) {
+    public DocumentTypeRemoveByIdUseCaseImpl(GenericDataProvider<DocumentType, DocumentType> dataProvider) {
         this.dataProvider = dataProvider;
     }
 

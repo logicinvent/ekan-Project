@@ -32,8 +32,7 @@ public class BeneficiaryUpdateController implements IResourceSaveUpdate<Benefici
     }
 
     @Override
-    @PutMapping(value = "/",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<TransferObject<BeneficiaryDto>> execute(
             @RequestHeader(value = Constants.UUID) final String uuid,

@@ -81,6 +81,22 @@ public class ExceptionHandlerFilter extends ResponseEntityExceptionHandler {
                         .build(), new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(PartnerNotImplementedException.class)
+    public ResponseEntity<Object> handlePartnerNotImplementedException(
+            Exception ex, WebRequest request) {
+        log.error(String.valueOf(ex));
+        return new ResponseEntity<Object>(
+                ErrorResponse.<PartnerNotImplementedException>builder()
+                        .locale(request.getLocale())
+                        .message("This feature was not implemented this time")
+                        .exceptionMessage(ex.getMessage())
+                        .exceptionClass(PartnerNotImplementedException.class)
+                        .code(HttpStatus.NOT_IMPLEMENTED.value())
+                        .timestamp(LocalDateTime.now())
+                        .exception(ex)
+                        .build(), new HttpHeaders(), HttpStatus.NOT_IMPLEMENTED);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleCustomException(
             Exception ex, WebRequest request) {

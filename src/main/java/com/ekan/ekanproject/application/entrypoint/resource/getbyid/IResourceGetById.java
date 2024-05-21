@@ -3,13 +3,13 @@ package com.ekan.ekanproject.application.entrypoint.resource.getbyid;
 import com.ekan.ekanproject.application.port.out.OutputPort;
 import com.ekan.ekanproject.application.port.out.TransferObject;
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
+import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.ResponseEntity;
 
-import static com.ekan.ekanproject.infrastructure.util.Constants.RECORD_OBTAINED;
-import static com.ekan.ekanproject.infrastructure.util.Constants.UNKNOWN_ERROR;
+import static com.ekan.ekanproject.infrastructure.util.Constants.*;
 
 public interface IResourceGetById<TOutputPort extends OutputPort> {
 
@@ -19,9 +19,9 @@ public interface IResourceGetById<TOutputPort extends OutputPort> {
      * @param uuid    String
      * @param product Product
      * @param id      Long
-     * @return TOutputPort
+     * @return TransferObject<TOutputPort>
      */
-    @Operation(summary = "Service available to obtain registered information by id")
+    @Operation(summary = SERVICE_AVAILABLE_TO_OBTAIN_REGISTERED_INFORMATION_BY_ID)
     @ApiResponses(value = {
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = RECORD_OBTAINED,
                     content = {@Content(mediaType = "application/json")}),

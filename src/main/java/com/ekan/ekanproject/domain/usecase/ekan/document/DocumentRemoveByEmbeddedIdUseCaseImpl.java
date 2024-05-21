@@ -1,4 +1,4 @@
-package com.ekan.ekanproject.domain.usecase.document;
+package com.ekan.ekanproject.domain.usecase.ekan.document;
 
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
 import com.ekan.ekanproject.domain.model.Document;

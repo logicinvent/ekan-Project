@@ -1,4 +1,4 @@
-package com.ekan.ekanproject.domain.usecase.beneficiary;
+package com.ekan.ekanproject.domain.usecase.ekan.beneficiary;
 
 import com.ekan.ekanproject.application.port.out.TransferObject;
 import com.ekan.ekanproject.domain.dto.beneficiary.BeneficiaryDto;
@@ -33,9 +33,6 @@ public class BeneficiaryGetAllUseCaseImpl implements GenericGetAllUseCase<Transf
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         var result = dataProvider.findAll(uuid, product, pageable);
-
-        if (result.isEmpty())
-            return null;
 
         return TransferObject.<List<BeneficiaryDto>>builder()
                 .content(mapper.modelToDtoWithList(result.getContent()))

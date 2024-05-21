@@ -1,7 +1,7 @@
-package com.ekan.ekanproject.domain.usecase.document;
+package com.ekan.ekanproject.domain.usecase.ekan.document;
 
 import com.ekan.ekanproject.application.port.out.TransferObject;
-import com.ekan.ekanproject.domain.dto.beneficiary.DocumentDto;
+import com.ekan.ekanproject.domain.dto.document.DocumentDto;
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
 import com.ekan.ekanproject.domain.dto.shared.mapper.GenericMapper;
 import com.ekan.ekanproject.domain.model.Document;

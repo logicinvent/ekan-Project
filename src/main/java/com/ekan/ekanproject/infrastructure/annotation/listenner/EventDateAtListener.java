@@ -10,6 +10,11 @@ import java.util.Objects;
 
 public class EventDateAtListener {
 
+    /**
+     * Annotation available to insert new event date in the field
+     * @param entity
+     * @throws IllegalAccessException
+     */
     @PrePersist
     @PreUpdate
     public void setEventDatedAt(Object entity) throws IllegalAccessException {

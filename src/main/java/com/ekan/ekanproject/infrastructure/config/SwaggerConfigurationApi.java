@@ -20,7 +20,7 @@ public class SwaggerConfigurationApi {
                         .version("1.0")
                         .description("Beneficiaries Api")
                         .termsOfService("http://swagger.io/terms/")
-                        .contact(new Contact().name("Jean Fernandes").url("http://www.ekan.com.br").email("jfernandes@ekan.com.br"))
+                        .contact(new Contact().name("Jean Fernandes").url("http://www.ekan.com.br").email("user@ekan.com.br"))
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
                         .description("External documentation")

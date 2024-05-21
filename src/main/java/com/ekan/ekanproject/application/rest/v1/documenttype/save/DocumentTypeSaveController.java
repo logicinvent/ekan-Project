@@ -33,8 +33,8 @@ public class DocumentTypeSaveController implements IResourceSaveUpdate<DocumentT
     }
 
     @Override
-    @PostMapping(
-            consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<TransferObject<DocumentTypeDto>> execute(
             @RequestHeader(value = Constants.UUID) final String uuid,
             @RequestHeader(value = Constants.PRODUCT) final ProductType product,

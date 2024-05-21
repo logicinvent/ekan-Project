@@ -2,7 +2,7 @@ package com.ekan.ekanproject.application.rest.v1.document.get;
 
 import com.ekan.ekanproject.application.entrypoint.resource.get.IResourceGet;
 import com.ekan.ekanproject.application.port.out.TransferObject;
-import com.ekan.ekanproject.domain.dto.beneficiary.DocumentDto;
+import com.ekan.ekanproject.domain.dto.document.DocumentDto;
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
 import com.ekan.ekanproject.domain.model.Document;
 import com.ekan.ekanproject.domain.usecase.iface.GenericGetAllUseCase;

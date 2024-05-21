@@ -1,7 +1,7 @@
-package com.ekan.ekanproject.domain.usecase.document;
+package com.ekan.ekanproject.domain.usecase.ekan.document;
 
 import com.ekan.ekanproject.application.port.out.TransferObject;
-import com.ekan.ekanproject.domain.dto.beneficiary.DocumentDto;
+import com.ekan.ekanproject.domain.dto.document.DocumentDto;
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
 import com.ekan.ekanproject.domain.dto.shared.mapper.GenericMapper;
 import com.ekan.ekanproject.domain.model.Document;
@@ -15,13 +15,13 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class DocumentUseCaseImpl implements GenericGetAllUseCase<TransferObject<List<DocumentDto>>, Document> {
+public class DocumentGetAllUseCaseImpl implements GenericGetAllUseCase<TransferObject<List<DocumentDto>>, Document> {
 
     private final GenericDataProvider<Document, Document> dataProvider;
 
     private final GenericMapper<DocumentDto, Document> mapper;
 
-    public DocumentUseCaseImpl(GenericDataProvider<Document, Document> dataProvider, GenericMapper<DocumentDto, Document> mapper) {
+    public DocumentGetAllUseCaseImpl(GenericDataProvider<Document, Document> dataProvider, GenericMapper<DocumentDto, Document> mapper) {
         this.dataProvider = dataProvider;
         this.mapper = mapper;
     }
@@ -33,9 +33,6 @@ public class DocumentUseCaseImpl implements GenericGetAllUseCase<TransferObject<
 
         log.info("UUID: {} - PRODUCT: {} - CLASS: {}", uuid, product, this);
         var result = dataProvider.findAll(uuid, product, pageable);
-
-        if (result.isEmpty())
-            return null;
 
         return TransferObject.<List<DocumentDto>>builder()
                 .content(mapper.modelToDtoWithList(result.getContent()))

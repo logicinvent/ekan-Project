@@ -4,12 +4,12 @@ import com.ekan.ekanproject.application.port.in.InputPort;
 import com.ekan.ekanproject.application.port.out.OutputPort;
 import com.ekan.ekanproject.application.port.out.TransferObject;
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
+import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import org.springframework.http.ResponseEntity;
 
-import static com.ekan.ekanproject.infrastructure.util.Constants.UNKNOWN_ERROR;
-import static com.ekan.ekanproject.infrastructure.util.Constants.UPDATE_OR_INCLUSION_CARRIED_OUT_SUCCESSFULLY;
+import static com.ekan.ekanproject.infrastructure.util.Constants.*;
 
 public interface IResourceSaveUpdate<TInputPort extends InputPort, TOutputPort extends OutputPort> {
 
@@ -19,9 +19,9 @@ public interface IResourceSaveUpdate<TInputPort extends InputPort, TOutputPort e
      * @param uuid    String
      * @param product Product
      * @param arg     TInputPort
-     * @return TOutputPort
+     * @return TransferObject<TOutputPort>
      */
-    @Operation(summary = "Service available to save(POST) or update(PUT) information")
+    @Operation(summary = SERVICE_AVAILABLE_TO_SAVE_POST_OR_UPDATE_PUT_INFORMATION)
     @io.swagger.v3.oas.annotations.responses.ApiResponses(value = {
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = UPDATE_OR_INCLUSION_CARRIED_OUT_SUCCESSFULLY,
                     content = {@Content(mediaType = "application/json")}),
