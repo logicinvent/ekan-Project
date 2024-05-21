@@ -3,7 +3,6 @@ package com.ekan.ekanproject.application.entrypoint.resource.getbyid;
 import com.ekan.ekanproject.application.port.out.OutputPort;
 import com.ekan.ekanproject.application.port.out.TransferObject;
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
-import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

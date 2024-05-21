@@ -5,8 +5,8 @@ import com.ekan.ekanproject.application.entrypoint.resource.getbyid.IResourceGet
 import com.ekan.ekanproject.application.entrypoint.resource.remove.IResourceRemove;
 import com.ekan.ekanproject.application.entrypoint.resource.remove.IResourceRemoveByEmbeddedId;
 import com.ekan.ekanproject.application.entrypoint.resource.saveupdate.IResourceSaveUpdate;
-import com.ekan.ekanproject.domain.dto.document.DocumentDto;
 import com.ekan.ekanproject.domain.dto.beneficiary.DocumentTypeDto;
+import com.ekan.ekanproject.domain.dto.document.DocumentDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

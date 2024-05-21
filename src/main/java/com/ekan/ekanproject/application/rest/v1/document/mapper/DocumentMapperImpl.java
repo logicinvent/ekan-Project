@@ -1,8 +1,8 @@
 package com.ekan.ekanproject.application.rest.v1.document.mapper;
 
 import com.ekan.ekanproject.domain.dto.beneficiary.BeneficiaryDto;
-import com.ekan.ekanproject.domain.dto.document.DocumentDto;
 import com.ekan.ekanproject.domain.dto.beneficiary.DocumentTypeDto;
+import com.ekan.ekanproject.domain.dto.document.DocumentDto;
 import com.ekan.ekanproject.domain.dto.shared.mapper.GenericMapper;
 import com.ekan.ekanproject.domain.dto.shared.mapper.MapperSupport;
 import com.ekan.ekanproject.domain.model.Document;

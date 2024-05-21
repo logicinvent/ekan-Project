@@ -1,7 +1,6 @@
 package com.ekan.ekanproject.application.entrypoint.resource.remove;
 
 import com.ekan.ekanproject.domain.dto.shared.enums.ProductType;
-import com.ekan.ekanproject.infrastructure.util.Constants;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import org.springframework.http.ResponseEntity;
